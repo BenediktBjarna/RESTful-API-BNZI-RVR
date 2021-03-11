@@ -8,7 +8,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 const app = express();
-// app.use(express.json());
+app.use(express.json());
 
 //Port environment variable already set up to run on Heroku
 var port = process.env.PORT || 3000;
@@ -89,6 +89,12 @@ app.post(apiPath + version + '/boards', (req, res) => {
 
 //Update a board
 //l8r
+app.put('/api/boards/:id/tasks/:taskId', (req, res) => {
+    const board = boards.find(b => b.id === parseInt(req.params.id));
+    if(!board) res.status(404).send('The course with the given ID was not found')
+
+
+});
 
 //Delete a board
 app.delete(apiPath + version + '/boards/:boardId', (req, res) => {
