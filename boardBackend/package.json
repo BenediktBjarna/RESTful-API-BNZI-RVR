@@ -4,7 +4,6 @@
   "description": "A backend for a board application.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
   },
   "engines": {
@@ -15,7 +14,7 @@
     "REST",
     "Veff213"
   ],
-  "author": "",
+  "author": "Benedikt",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
