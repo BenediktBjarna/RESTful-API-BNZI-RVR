@@ -1,4 +1,4 @@
-const appHost = "http://localhost:5501";
+const appHost = "https://powerful-river-75025.herokuapp.com/";
 
 //We use these as global variables to store the drag state
 //Better than the setData method, which is somewhat unreliable across browsers
