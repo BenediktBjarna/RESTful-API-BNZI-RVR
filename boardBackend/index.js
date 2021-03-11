@@ -8,6 +8,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 const app = express();
+// app.use(express.json());
 
 //Port environment variable already set up to run on Heroku
 var port = process.env.PORT || 3000;
@@ -46,9 +47,8 @@ var tasks = [
 app.get(apiPath + version + '/boards', (req, res) => {
     let boardsArray = [];
     for (let i = 0; i < boards.length; i++) {
-        boardsArray.push({ id: boards[i].id, name: boards[i].name, desciption: boards[i].description, tasks: boards[i].tasks});
+        boardsArray.push({ id: boards[i].id, name: boards[i].name, desciption: boards[i].description});
     }
-    
     res.status(200).json(boardsArray);
     console.log('All boards displayed');
 });
@@ -136,7 +136,7 @@ app.get(apiPath + version + '/boards/:boardId/tasks', (req, res) => {
 app.get(apiPath + version + '/boards/:boardId/tasks/:taskId', (req, res) => {
     for (let i = 0; i < boards.length; i++) {
         if (boards[i].id == req.params.boardId) {
-            if (!boards[i].tasks.includes(Number(req.params.taskId))) {
+            if (boards[i].tasks.includes(Number(req.params.taskId))) {
                 return res.status(404).json({ 'message': "Task with id " + req.params.taskId + " does not exist for the selected board." });
             }
             for (let j = 0; j < tasks.length; j++) {
@@ -207,6 +207,5 @@ app.get('/', (req, res) => {
 
 //Start the server
 app.listen(port, () => {
-    console.log('Boards backend listenin
-    g on port %s', port);
+    console.log('Boards backend listening on port %s', port);
 });

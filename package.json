@@ -1,0 +1,21 @@
+{
+  "name": "RESTful-API-BNZI-RVR",
+  "version": "1.0.0",
+  "description": "Allir slakir",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BenediktBjarna/RESTful-API-BNZI-RVR.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BenediktBjarna/RESTful-API-BNZI-RVR/issues"
+  },
+  "homepage": "https://github.com/BenediktBjarna/RESTful-API-BNZI-RVR#readme"
+}
