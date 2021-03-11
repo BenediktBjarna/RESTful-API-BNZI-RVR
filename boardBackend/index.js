@@ -46,5 +46,5 @@ app.get('/api/boards', (req, res) => {
 // app.listen(port, () => console.log(`Listening on port ${port}...`));
 
 app.listen(port, () => {
-    console.log('Event app listening,,...');
+    console.log('Event app listening...');
 });
